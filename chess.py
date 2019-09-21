@@ -46,3 +46,23 @@ board[row_position][col_position] = input_piece
 
 # Draw board with player's piece in position they specified..
 print_board(board)
+
+# Rook - can move any number of vacant squares vertically or horizontally. ..
+    # Given row_position - print the possible out list index positions to left or right
+        # of the current index ..  
+    # Given col position - 
+# To start, just print current position in the row (outer list)..
+# board[row_position][col_position] = input_piece
+
+# Just print out all item locations on current row except for 0 (that's a heading) and the current
+# position, since it's already taken..
+for c in range(len(board[row_position])):
+    print("cell content: " + board[row_position][c])
+
+ 
+
+# Queen - can move any number of vacant squares diagonally, horizontally, or vertically.
+# Knight - moves to a square that is two squares away horizontally and one square vertically, 
+#           or two squares vertically and one square horizontally
+
+
