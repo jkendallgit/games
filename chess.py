@@ -54,6 +54,9 @@ board[row_position][col_position] = input_piece
 # Draw board with player's piece in position they specified..
 print_board(board)
 
+# Print output from get_moves...
+
+
 # NOTES #############################################################################
 
 # print("Your possible moves are...") 
