@@ -58,11 +58,11 @@ print_board(board)
 # position, since it's already taken..
 print("Row Position: " + str(row_position))
 print("Col Position: " + str(col_position))
-for c in range(len(board[row_position])):
-    if (row_position != 0) and col_position: # and col_position != 0 and c != board[row_position][col_position]):
-        print("cell content: " + board[row_position][c])
-
- 
+print()
+for idx, col in enumerate(board[row_position]):
+    if (idx != 0 and idx != col_position):
+        print(idx, col) # So cool, this gives all possible left <> right moves a root can move Horizontally
+                        # Next, we need to print out all possible up / down moves a rook can make Vertically
 
 # Queen - can move any number of vacant squares diagonally, horizontally, or vertically.
 # Knight - moves to a square that is two squares away horizontally and one square vertically, 
