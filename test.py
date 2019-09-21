@@ -43,9 +43,7 @@ row_position, col_position = get_position("2", "d")
 print("Row Position is: " + str(row_position))
 print("Col Position is: " + str(col_position))
 
-# Given list coordinates that get_position returns, put a player on the board at that position
 # -piece KNIGHT -position d2
-
 board[row_position][col_position] = "K"
 
 # re-draw the board...
