@@ -9,7 +9,7 @@ mylist = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["1", " ", " ", " ", " ", " ", " ", " ", " "]]
 
 for i in range(len(mylist)):
-    if i > 1:
+    if i > 0:
         print("   ---  ---  ---  ---  ---  ---  ---  ---")
     for j in range(len(mylist[i])):
         if i > 0 and j > 0:
