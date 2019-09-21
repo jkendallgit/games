@@ -47,26 +47,16 @@ board[row_position][col_position] = input_piece
 # Draw board with player's piece in position they specified..
 print_board(board)
 
-# Rook - can move any number of vacant squares vertically or horizontally. ..
-    # Given row_position - print the possible out list index positions to left or right
-        # of the current index ..  
-    # Given col position - 
-# To start, just print current position in the row (outer list)..
-# board[row_position][col_position] = input_piece
-
-# Just print out all item locations on current row except for 0 (that's a heading) and the current
-# position, since it's already taken..
-print("Row Position: " + str(row_position))
-print("Col Position: " + str(col_position))
-print()
-
 possible_moves = []
 for idx, col in enumerate(board[row_position]):
     if (idx != 0 and idx != col_position):
-        #print(idx, col)
         possible_moves.append(idx)
-print("Your possible moves are...") 
-print(possible_moves)
+return possible_moves
+
+# NOTES #############################################################################
+
+# print("Your possible moves are...") 
+# print(possible_moves)
         
 # So cool, this gives all possible left <> right moves any piece can move Horizontally
 # Next, we need to print out all possible up / down moves a rook can make Vertically
@@ -84,3 +74,15 @@ print(possible_moves)
 # Queen - can move any number of vacant squares diagonally, horizontally, or vertically.
 # Knight - moves to a square that is two squares away horizontally and one square vertically, 
 # or two squares vertically and one square horizontally
+
+# Rook - can move any number of vacant squares vertically or horizontally. ..
+    # Given row_position - print the possible out list index positions to left or right
+        # of the current index ..  
+    # Given col position - 
+# To start, just print current position in the row (outer list)..
+# board[row_position][col_position] = input_piece
+# Just print out all item locations on current row except for 0 (that's a heading) and the current
+# position, since it's already taken..
+# print("Row Position: " + str(row_position))
+# print("Col Position: " + str(col_position))
+# print()
