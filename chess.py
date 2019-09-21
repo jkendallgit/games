@@ -41,7 +41,7 @@ def get_moves(move_type, board, row_position, col_position):
     
     if (move_type == "v"):
         # for idx, row in enumerate(board):
-        for idx in range(8):
+        for idx in range(9):
             if (idx != row_position):
                 possible_moves.append(idx)
                 #print("idx: " + str(idx))
