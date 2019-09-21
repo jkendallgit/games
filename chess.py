@@ -33,7 +33,7 @@ def get_moves(board, row_position, col_position):
     possible_moves = []
     for idx, col in enumerate(board[row_position]):
         if (idx != 0 and idx != col_position):
-            possible_moves.append(idx)
+            possible_moves.append(row_position, idx)
     return possible_moves
 
 # Initialize chess board
