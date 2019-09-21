@@ -30,6 +30,7 @@ def get_position(r_heading, c_heading):
     return row_list_pos, col_list_pos
 
 def get_moves(move_type, board, row_position, col_position):
+    # move types (h horizontal, v vertical, d diagonal, l L-shaped)
     possible_moves = []
     
     # Horizontal
@@ -37,9 +38,10 @@ def get_moves(move_type, board, row_position, col_position):
         for idx, col in enumerate(board[row_position]):
             if (idx != 0 and idx != col_position):
                 possible_moves.append(idx)
-    else:
-        print("Unsupported move type!: " + move_type)
-        exit(1)
+    
+    #else:
+        #print("Unsupported move type!: " + move_type)
+        #exit(1)
     
     return possible_moves
 
