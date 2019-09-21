@@ -31,9 +31,14 @@ def get_position(r_heading, c_heading):
 
 def get_moves(move_type, board, row_position, col_position):
     possible_moves = []
+    
+    
     for idx, col in enumerate(board[row_position]):
         if (idx != 0 and idx != col_position):
             possible_moves.append(idx)
+    
+    
+    
     return possible_moves
 
 # Initialize chess board
