@@ -10,6 +10,8 @@ mylist = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["2", " ", " ", " ", " ", " ", " ", " ", " "],
 ["1", " ", " ", " ", " ", " ", " ", " ", " "]]
 
+mylist[2][5] = "K"
+
 # Draw Chess Board (this needs to turn into a function)
 for i in range(len(mylist)):
     if i > 0:
