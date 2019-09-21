@@ -45,15 +45,12 @@ board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 # input_position  
 
 # given user input, call get_position to return the outer and inner list locations...
-row_position, col_position = get_position("2", "d")
+#row_position, col_position = get_position("2", "d")
 
-print("Row Position is: " + str(row_position))
-print("Col Position is: " + str(col_position))
-
-# chess.py -piece KNIGHT -position d2
-# board[row_position][col_position] = "K"
+#print(input_position[0])
+#print(input_position[1])
+row_position, col_position = get_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
-# re-draw the board...
+# Draw board with player's piece in position they specified..
 print_board(board)
-
