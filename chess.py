@@ -78,4 +78,4 @@ v_moves = get_moves("v",board, row_position, col_position)
 for move in range(len(v_moves)):
     board[move][col_position] = "+"
 
-# print_board(board)
+print_board(board)
