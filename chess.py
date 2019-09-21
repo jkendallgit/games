@@ -29,7 +29,7 @@ def get_position(r_heading, c_heading):
     col_list_pos = col_mapping[c_heading]
     return row_list_pos, col_list_pos
 
-def get_moves(board, row_position, col_position):
+def get_moves(move_type, board, row_position, col_position):
     possible_moves = []
     for idx, col in enumerate(board[row_position]):
         if (idx != 0 and idx != col_position):
@@ -55,7 +55,7 @@ board[row_position][col_position] = input_piece
 print_board(board)
 
 # Print output from get_moves...
-possible_moves = get_moves(board, row_position, col_position)
+possible_moves = get_moves("horizontal", board, row_position, col_position)
 # print("Look your possible horizontal moves are: " + str(possible_moves))
 for move in range(len(possible_moves)):
     board[row_position][possible_moves[move]] = "*"
