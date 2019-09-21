@@ -67,6 +67,8 @@ for idx, col in enumerate(board[row_position]):
 # of the below functions and add lists returned by the functions to a new list called "possible_moves".
 # Once possible_moves is populated, we can redraw the Chess board and add "*" characters to each
 # possible move, and we can also return the algebraic labels to the user for each possible move.
+# The only real "check" we need to add is to ensure the user provided a board location/coordinate 
+# that's not outside the range of the board.
 # get_horizontal_moves
 # get_vertical_moves
 # get_diagonal_moves
