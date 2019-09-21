@@ -39,6 +39,10 @@ def get_moves(move_type, board, row_position, col_position):
             if (idx != 0 and idx != col_position):
                 possible_moves.append(idx)
     
+    if (move_type == "v"):
+        for idx, row in enumerate(board):
+            print "idx: " + idx
+            print "row: " + row
     #else:
         #print("Unsupported move type!: " + move_type)
         #exit(1)
