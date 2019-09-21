@@ -70,8 +70,12 @@ board[row_position][col_position] = input_piece
 # print_board(board)
 
 # Print output from get_moves...
-v_moves = get_moves("v", board, row_position, col_position)
+h_moves = get_moves("h", board, row_position, col_position)
+for move in range(len(h_moves)):
+    board[row_position][h_moves[move]] = "*"
+
+v_moves = get_moves("v",board, row_position, col_position)
 for move in range(len(v_moves)):
-    board[row_position][v_moves[move]] = "*"
+    board[move][col_position] = "+"
 
 # print_board(board)
