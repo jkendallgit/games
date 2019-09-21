@@ -57,7 +57,8 @@ print_board(board)
 # Print output from get_moves...
 possible_moves = get_moves(board, row_position, col_position)
 print("Look your possible horizontal moves are: " + str(possible_moves))
-board[row_position][possible_moves[m]] = "*"
+for move in range(len(possible_moves)):
+    board[row_position][possible_moves[move]] = "*"
 
 print_board(board)
 
