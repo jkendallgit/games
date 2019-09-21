@@ -56,8 +56,11 @@ print_board(board)
 
 # Just print out all item locations on current row except for 0 (that's a heading) and the current
 # position, since it's already taken..
+print("Row Position: " + str(row_position))
+print("Col Position: " + str(col_position))
 for c in range(len(board[row_position])):
-    print("cell content: " + board[row_position][c])
+    if (row_position != 0) and col_position: # and col_position != 0 and c != board[row_position][col_position]):
+        print("cell content: " + board[row_position][c])
 
  
 
