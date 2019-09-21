@@ -56,8 +56,8 @@ print_board(board)
 
 # Print output from get_moves...
 possible_moves = get_moves(board, row_position, col_position)
-print("Look your possible moves are: " + str(possible_moves))
-print("Look data type of possible_moves is: " + type(possible_moves))
+print("Look your possible horizontal moves are: " + str(possible_moves))
+ 
 
 # NOTES #############################################################################
 
