@@ -63,6 +63,14 @@ for idx, col in enumerate(board[row_position]):
     if (idx != 0 and idx != col_position):
         print(idx, col) # So cool, this gives all possible left <> right moves a root can move Horizontally
                         # Next, we need to print out all possible up / down moves a rook can make Vertically
+# Create the following functions; Different players will use different combos
+# of the below functions and add lists returned by the functions to a new list called "possible_moves".
+# Once possible_moves is populated, we can redraw the Chess board and add "*" characters to each
+# possible move, and we can also return the algebraic labels to the user for each possible move.
+# get_horizontal_moves
+# get_vertical_moves
+# get_diagonal_moves
+# get_l_moves
 
 # Queen - can move any number of vacant squares diagonally, horizontally, or vertically.
 # Knight - moves to a square that is two squares away horizontally and one square vertically, 
