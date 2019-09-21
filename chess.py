@@ -83,3 +83,5 @@ for move in range(len(h_moves)):
  #   board[move][col_position] = "+"
 
 print_board(board)
+
+# WHY IS Q GETTING OVERWRITTEN?
