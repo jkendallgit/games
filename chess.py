@@ -44,7 +44,8 @@ def get_moves(move_type, board, row_position, col_position):
         for idx in range(10):
             print("LOOK IDX IS: " + str(idx))
             print("LOOK ROW POSITION IS: " + str(row_position))
-            #if (idx != row_position):
+            if (idx != row_position):
+                print("LOOK, IDX NOT ROW POSITION, IDX IS: " + str(idx))
              #   possible_moves.append(idx)
                 #print("idx: " + str(idx))
                 #print("row: " + str(row))
