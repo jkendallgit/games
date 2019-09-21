@@ -29,6 +29,13 @@ def get_position(r_heading, c_heading):
     col_list_pos = col_mapping[c_heading]
     return row_list_pos, col_list_pos
 
+def get_moves():
+    possible_moves = []
+    for idx, col in enumerate(board[row_position]):
+        if (idx != 0 and idx != col_position):
+            possible_moves.append(idx)
+    return possible_moves
+
 # Initialize chess board
 board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["8", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -46,12 +53,6 @@ board[row_position][col_position] = input_piece
 
 # Draw board with player's piece in position they specified..
 print_board(board)
-
-possible_moves = []
-for idx, col in enumerate(board[row_position]):
-    if (idx != 0 and idx != col_position):
-        possible_moves.append(idx)
-return possible_moves
 
 # NOTES #############################################################################
 
