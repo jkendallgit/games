@@ -71,15 +71,15 @@ row_position, col_position = get_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
 # Draw board with player's piece in position they specified..
-# print_board(board)
+print_board(board)
 
 # Print output from get_moves...
 h_moves = get_moves("h", board, row_position, col_position)
 for move in range(len(h_moves)):
     board[row_position][h_moves[move]] = "*"
 
-v_moves = get_moves("v",board, row_position, col_position)
-for move in range(len(v_moves)):
-    board[move][col_position] = "+"
+#v_moves = get_moves("v",board, row_position, col_position)
+#for move in range(len(v_moves)):
+ #   board[move][col_position] = "+"
 
 print_board(board)
