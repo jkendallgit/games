@@ -22,7 +22,7 @@ def print_board(board):
 
 def get_position(r_heading, c_heading):
     # row heading/ outer list position
-    row_mapping = {'1': 8, '2': 7, '3': 6, '4': 7, '5': 4, '6': 3, '7': 3, '8': 1 }
+    row_mapping = {'1': 8, '2': 7, '3': 6, '4': 5, '5': 4, '6': 3, '7': 2, '8': 1 }
     # col heading/ inner list position
     col_mapping = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8 }
     row_list_pos = row_mapping[r_heading]
@@ -40,15 +40,7 @@ board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["2", " ", " ", " ", " ", " ", " ", " ", " "],
 ["1", " ", " ", " ", " ", " ", " ", " ", " "]]
 
-
-# input_piece  
-# input_position  
-
 # given user input, call get_position to return the outer and inner list locations...
-#row_position, col_position = get_position("2", "d")
-
-#print(input_position[0])
-#print(input_position[1])
 row_position, col_position = get_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
