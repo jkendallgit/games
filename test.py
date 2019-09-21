@@ -17,7 +17,8 @@ def get_position(r_heading, c_heading):
     col_mapping = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8 }
     row_list_pos = row_mapping[r_heading]
     col_list_pos = col_mapping[c_heading]
-    print("Player is at " + r_heading + c_heading + " which is " + str(row_list_pos) + "," + str(col_list_pos))
+    #print("Player is at " + r_heading + c_heading + " which is " + str(row_list_pos) + "," + str(col_list_pos))
+    return row_list_pos, col_list_pos
 
 # Initialize chess board
 board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
@@ -36,12 +37,16 @@ print_board(board)
 # User input would be 2d...
 
 # given user input, call get_position to return the outer and inner list locations...
-get_position("2", "d")
+# position = get_position("2", "d")
+row_position, col_position = get_position("2", "d")
+
+print("Row Position is: " + str(row_position))
+print("Col Position is: " + str(col_position))
 
 # Given list coordinates that get_position returns, put a player on the board at that position
 # -piece KNIGHT -position d2
 
-board[7][4] = "K"
+board[row_position][col_position] = "K"
 
 # re-draw the board...
 print_board(board)
