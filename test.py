@@ -1,3 +1,5 @@
+# Initialize chess board
+
 mylist = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["8", " ", " ", " ", " ", " ", " ", " ", " "],
 ["7", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -8,6 +10,7 @@ mylist = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["2", " ", " ", " ", " ", " ", " ", " ", " "],
 ["1", " ", " ", " ", " ", " ", " ", " ", " "]]
 
+# Draw Chess Board (this needs to turn into a function)
 for i in range(len(mylist)):
     if i > 0:
         print("   ---  ---  ---  ---  ---  ---  ---  ---")
