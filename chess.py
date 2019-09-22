@@ -41,14 +41,10 @@ def get_moves(move_type, board, row_position, col_position):
     
     if (move_type == "v"):
         # for idx, row in enumerate(board):
-        for idx in range(10):
-            print("LOOK IDX IS: " + str(idx))
-            print("LOOK ROW POSITION IS: " + str(row_position))
-            if (idx != row_position):
-                print("NOOOOOO LOOK, IDX IS NOT ROW POSITION, IDX IS: " + str(idx))
+        for idx, row in enumerate(board):
+        # for idx in range(9):
+            if (idx > 0 and idx != row_position):
                 possible_moves.append(idx)
-                #print("idx: " + str(idx))
-                #print("row: " + str(row))
     #else:
         #print("Unsupported move type!: " + move_type)
         #exit(1)
@@ -78,9 +74,14 @@ h_moves = get_moves("h", board, row_position, col_position)
 for move in range(len(h_moves)):
     board[row_position][h_moves[move]] = "*"
 
-#v_moves = get_moves("v",board, row_position, col_position)
-#for move in range(len(v_moves)):
- #   board[move][col_position] = "+"
+v_moves = get_moves("v",board, row_position, col_position)
+#print(v_moves)
+for move in v_moves:
+    #print("Move is: " + str(move))
+    #print("Col pos is: " + str(col_position))
+    #board[8][4] = "V"
+    board[move][col_position] = "v"
+    #print("board[" + str(move) + "][" + str(col_position) + "] = V")
 
 print_board(board)
 
