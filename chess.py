@@ -36,15 +36,14 @@ def get_moves(move_type, board, row_position, col_position):
     # Horizontal
     if (move_type == "h"):
         for idx, col in enumerate(board[row_position]):
-            if (idx != 0 and idx != col_position):
+            if (idx > 0 and idx != col_position):
                 possible_moves.append(idx)
-    
+
     if (move_type == "v"):
-        # for idx, row in enumerate(board):
         for idx, row in enumerate(board):
-        # for idx in range(9):
             if (idx > 0 and idx != row_position):
                 possible_moves.append(idx)
+    # Need to add a check here for any move type that's not supported..
     #else:
         #print("Unsupported move type!: " + move_type)
         #exit(1)
@@ -69,20 +68,28 @@ board[row_position][col_position] = input_piece
 # Draw board with player's piece in position they specified..
 print_board(board)
 
-# Print output from get_moves...
+# execute h moves
 h_moves = get_moves("h", board, row_position, col_position)
-for move in range(len(h_moves)):
-    board[row_position][h_moves[move]] = "h"
+h_move_positions = []
+for move in h_moves:
+    board[row_position][move] = "h"
+    print(type(row_position))
+    print(type(move))
+    #h_move_positions.append(row_position, move)
 
+# execute v moves
 v_moves = get_moves("v",board, row_position, col_position)
-#print(v_moves)
 for move in v_moves:
-    #print("Move is: " + str(move))
-    #print("Col pos is: " + str(col_position))
-    #board[8][4] = "V"
     board[move][col_position] = "v"
-    #print("board[" + str(move) + "][" + str(col_position) + "] = V")
+
+# Next, let's try to add h_moves and v_moves lists together into a new list and re-draw
+# the board based on that new list...
 
 print_board(board)
 
-# WHY IS Q GETTING OVERWRITTEN?
+#print("h move positions: " + h_move_positions)
+
+#print(h_moves)
+#print(v_moves)
+#print(d_moves)
+#print(l_moves)
