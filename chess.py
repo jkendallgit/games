@@ -20,11 +20,20 @@ def print_board(board):
                 print(board[i][j], end = ' ')
         print()
 
-def get_position(r_heading, c_heading):
+def get_list_position(r_heading, c_heading):
     # row heading/ outer list position
     row_mapping = {'1': 8, '2': 7, '3': 6, '4': 5, '5': 4, '6': 3, '7': 2, '8': 1 }
     # col heading/ inner list position
     col_mapping = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8 }
+    row_list_pos = row_mapping[r_heading]
+    col_list_pos = col_mapping[c_heading]
+    return row_list_pos, col_list_pos
+
+# There must be a better way to do this, TODO combine this function with get_list_position
+# and just reverse the dict instead of creating more dicts...
+def get_board_position(r_heading, c_heading):
+    row_mapping = {'8': 1, '7': 2, '6': 3, '5': 4, '4': 5, '3': 6, '2': 7, '1': 8 }
+    col_mapping = {'1': a, '2': b, '3': c, '4': d, '5': e, '6': f, '7': g, '8': h }
     row_list_pos = row_mapping[r_heading]
     col_list_pos = col_mapping[c_heading]
     return row_list_pos, col_list_pos
@@ -61,8 +70,8 @@ board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["2", " ", " ", " ", " ", " ", " ", " ", " "],
 ["1", " ", " ", " ", " ", " ", " ", " ", " "]]
 
-# given user input, call get_position to return the outer and inner list locations...
-row_position, col_position = get_position(input_position[1], input_position[0])
+# given user input, call get_list_position to return the outer and inner list locations...
+row_position, col_position = get_list_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
 # Draw board with player's piece in position they specified..
@@ -73,9 +82,13 @@ h_moves = get_moves("h", board, row_position, col_position)
 h_move_positions = []
 for move in h_moves:
     board[row_position][move] = "h"
-    print(type(row_position))
-    print(type(move))
-    #h_move_positions.append(row_position, move)
+    #print(type(row_position))
+    #print(type(move))
+    list_position = int(str(row_position) + str(move))
+    h_move_positions.append(list_position)
+    # next print out h_move_positions
+    # then, call get_board_position and print out board positions, make sure they match up
+print("Look here is h_move_positions: " + str(h_move_positions))
 
 # execute v moves
 v_moves = get_moves("v",board, row_position, col_position)
