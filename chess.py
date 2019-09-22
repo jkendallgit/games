@@ -72,7 +72,7 @@ print_board(board)
 # Print output from get_moves...
 h_moves = get_moves("h", board, row_position, col_position)
 for move in range(len(h_moves)):
-    board[row_position][h_moves[move]] = "*"
+    board[row_position][h_moves[move]] = "h"
 
 v_moves = get_moves("v",board, row_position, col_position)
 #print(v_moves)
