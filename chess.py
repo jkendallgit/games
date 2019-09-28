@@ -83,7 +83,6 @@ def get_moves(move_type, board, row_position, col_position, move_types):
         #exit(1)
 
     print("LOOK get_moves got move_types of: " + str(move_types))
-    
     print("LOOK get_moves came up with possible_moves of: " + str(possible_moves))
     return possible_moves
 
@@ -107,7 +106,6 @@ move_types = get_move_types(input_piece)
 
 # execute h moves
 h_moves = get_moves("h", board, row_position, col_position, move_types)
-# h_move_positions = []
 
 # Update board display with all possible h moves, this should move to a function
 for move in h_moves:
@@ -123,13 +121,8 @@ for move in v_moves:
     board[move][col_position] = "v"
 
 #print_board(board)
-#print("LOOK, h_moves is: " + str(h_moves))
-#print("LOOK, v_moves is: " + str(v_moves))
-#move_types = get_move_types(input_piece)
-#print("LOOK, move_types is: " + str(move_types))
-#print(type(move_types))
-
-
+print("LOOK, h_moves is: " + str(h_moves))
+print("LOOK, v_moves is: " + str(v_moves))
 
 # Use this later once you have all possible moves in 1 single list
 # board_positions = []
