@@ -38,7 +38,9 @@ def get_board_position(r_heading, c_heading):
     col_mapping = {'1': a, '2': b, '3': c, '4': d, '5': e, '6': f, '7': g, '8': h }
     row_list_pos = row_mapping[r_heading]
     col_list_pos = col_mapping[c_heading]
-    return row_list_pos, col_list_pos
+    print("HELLO FROM get_board_positions: row_list_pos: " + row_list_pos)
+    print("HELLO FROM get_board_positions: col_list_pos: " + col_list_pos)
+    # return row_list_pos, col_list_pos
 
 def get_moves(move_type, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
@@ -84,13 +86,14 @@ h_moves = get_moves("h", board, row_position, col_position)
 h_move_positions = []
 for move in h_moves:
     board[row_position][move] = "h"
-    #print(type(row_position))
-    #print(type(move))
     list_position = int(str(row_position) + str(move))
     h_move_positions.append(list_position)
-    # next print out h_move_positions
-    # then, call get_board_position and print out board positions, make sure they match up
 print("Look here is h_move_positions: " + str(h_move_positions))
+# Look here is h_move_positions: [41, 42, 44, 45, 46, 47, 48]
+return_to_user_positions = []
+for id, rp in enumerate(h_move_positions):
+    get_board_position(h_move_positions[idx][0], h_move_positions[idx][1])
+
 
 # execute v moves
 v_moves = get_moves("v",board, row_position, col_position)
