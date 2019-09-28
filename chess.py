@@ -95,16 +95,21 @@ for id, rp in enumerate(h_move_positions):
     row_p = int(str(rp)[0])
     col_p = int(str(rp)[1])
     board_positions.append(get_board_position(row_p, col_p))
-
-print("Look here are board_positions: " + str(board_positions))
+# print("Look here are board_positions: " + str(board_positions))
    
 # execute v moves
 v_moves = get_moves("v",board, row_position, col_position)
 for move in v_moves:
     board[move][col_position] = "v"
 
-# Next, let's try to add h_moves and v_moves lists together into a new list and re-draw
-# the board based on that new list...
+# LOOK
+# work on this next, you want to append all the  possible v moves to board_positions list,
+# right now it just has h_moves...
+# for id, rp in enumerate(h_move_positions):
+#    row_p = int(str(rp)[0])
+#    col_p = int(str(rp)[1])
+#    board_positions.append(get_board_position(row_p, col_p))
+# print("Look here are board_positions: " + str(board_positions))
 
 print_board(board)
 
