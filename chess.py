@@ -20,6 +20,7 @@ def print_board(board):
                 print(board[i][j], end = ' ')
         print()
 
+# Use this function to translate user input (algebraic position) to list positions for the game board..
 def get_list_position(r_heading, c_heading):
     # row heading/ outer list position
     row_mapping = {'1': 8, '2': 7, '3': 6, '4': 5, '5': 4, '6': 3, '7': 2, '8': 1 }
@@ -31,6 +32,7 @@ def get_list_position(r_heading, c_heading):
 
 # There must be a better way to do this, TODO combine this function with get_list_position
 # and just reverse the dict instead of creating more dicts...
+# Use this function to return back algebraic location of possible moves to user...
 def get_board_position(r_heading, c_heading):
     row_mapping = {'8': 1, '7': 2, '6': 3, '5': 4, '4': 5, '3': 6, '2': 7, '1': 8 }
     col_mapping = {'1': a, '2': b, '3': c, '4': d, '5': e, '6': f, '7': g, '8': h }
