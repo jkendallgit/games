@@ -34,13 +34,13 @@ def get_list_position(r_heading, c_heading):
 # and just reverse the dict instead of creating more dicts...
 # Use this function to return back algebraic location of possible moves to user...
 def get_board_position(r_heading, c_heading):
-    row_mapping = {'8': 1, '7': 2, '6': 3, '5': 4, '4': 5, '3': 6, '2': 7, '1': 8 }
-    col_mapping = {'1': a, '2': b, '3': c, '4': d, '5': e, '6': f, '7': g, '8': h }
+    row_mapping = {8: 1, 7: 2, 6: 3, 5: 4, 4: 5, 3: 6, 2: 7, 1: 8 }
+    col_mapping = {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h' }
     row_list_pos = row_mapping[r_heading]
     col_list_pos = col_mapping[c_heading]
-    print("HELLO FROM get_board_positions: row_list_pos: " + row_list_pos)
-    print("HELLO FROM get_board_positions: col_list_pos: " + col_list_pos)
-    # return row_list_pos, col_list_pos
+    board_position =  str(col_list_pos) + str(row_list_pos)
+    # print("HELLO FROM get_board_positions: board_position: " + board_position)
+    return board_position
 
 def get_moves(move_type, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
@@ -90,14 +90,14 @@ for move in h_moves:
     h_move_positions.append(list_position)
 print("Look here is h_move_positions: " + str(h_move_positions))
 # Look here is h_move_positions: [41, 42, 44, 45, 46, 47, 48]
-return_to_user_positions = []
+board_positions = []
 for id, rp in enumerate(h_move_positions):
-    #get_board_position(h_move_positions[idx][0], h_move_positions[idx][1])
-    print (int(str(rp)[0]))
-    print (int(str(rp)[1]))
+    row_p = int(str(rp)[0])
+    col_p = int(str(rp)[1])
+    board_positions.append(get_board_position(row_p, col_p))
+
+print("Look here are board_positions: " + str(board_positions))
    
-
-
 # execute v moves
 v_moves = get_moves("v",board, row_position, col_position)
 for move in v_moves:
