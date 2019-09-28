@@ -105,27 +105,12 @@ board[row_position][col_position] = input_piece
 # given input_piece, determine what move types can be made:
 move_types = get_move_types(input_piece)
 
-# execute h moves
-# h_moves = get_moves("h", board, row_position, col_position, move_types)
-
-# Update board display with all possible h moves, this should move to a function
-#for move in h_moves:
-    #board[row_position][move] = "h"
-    #list_position = int(str(row_position) + str(move))
-    #h_move_positions.append(list_position)
-
-# execute v moves
-# v_moves = get_moves("v",board, row_position, col_position, move_types)
-
-# Update board display with all possible v moves, this should move to a function
-#for move in v_moves:
-    #board[move][col_position] = "v"
-
-#print_board(board)
-#print("LOOK, h_moves is: " + str(h_moves))
-#print("LOOK, v_moves is: " + str(v_moves))
-
+# get possible moves the given piece can make based on provided board position:
 possible_moves =  get_moves(move_types, board, row_position, col_position)
+
+# Print game board
+print_board(board)
+
 print("LOOK, possible_moves are: " + str(possible_moves))
 
 # Use this later once you have all possible moves in 1 single list
