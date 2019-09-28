@@ -47,14 +47,18 @@ def get_piece_name(input_piece):
              }
         return switcher.get(input_piece, "UnsupportedPiece")
 
-
 def get_move_types(player_type):
     print("LOOK, get_move_types got passed player_type of: " + get_piece_name(input_piece))
-    # move_types = ()  #Tuple, not a list
-    # return move_types
+    switcher={
+                # "Q":"dhv" # Returns a string
+                "Q":("d","h","v")
+                #"R":"Rook",
+                #"K":"Knight"
+             }
+    move_types = switcher.get(player_type, "UnsupportedPlayer")
+    return move_types
 
-    # thistuple = ("apple", "banana", "cherry")
-    # print(thistuple)
+   
 
 def get_moves(move_type, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
@@ -112,7 +116,14 @@ for move in v_moves:
 print_board(board)
 print("LOOK, h_moves is: " + str(h_moves))
 print("LOOK, v_moves is: " + str(v_moves))
-get_move_types("KING")
+move_types = get_move_types(input_piece)
+print("LOOK, move_types is: " + str(move_types))
+print(type(move_types))
+
+# ****
+# Next, move up the above call to move_types to above where you call "get_moves" for h_moves and v_moves,
+# and see if you can just pass in the tuple "move_types" and have get_moves loop through it and report
+# back the values like h, v, d etc...
 
 # Use this later once you have all possible moves in 1 single list
 # board_positions = []
