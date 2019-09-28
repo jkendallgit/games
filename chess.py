@@ -120,12 +120,12 @@ possible_moves =  get_moves(move_types, board, row_position, col_position)
 # Print game board
 print_board(board)
 
-print("LOOK, possible_moves are: " + str(possible_moves))
+print("possible_moves     : " + str(possible_moves))
 
 # Get possible moves (in algebraic notation) to return to user 
 user_possible_moves = get_alg_positions(possible_moves)
 
-print("LOOK, user_possible_moves are: " + str(user_possible_moves))
+print("user_possible_moves: " + str(user_possible_moves))
 
 # for id, rp in enumerate(h_move_positions):
 #    row_p = int(str(rp)[0])
