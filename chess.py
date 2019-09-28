@@ -104,7 +104,7 @@ for move in v_moves:
 
 # LOOK
 # work on this next, you want to append all the  possible v moves to board_positions list,
-# right now it just has h_moves...
+# right now it just has h_moves...*Do this from 1 function..
 # for id, rp in enumerate(h_move_positions):
 #    row_p = int(str(rp)[0])
 #    col_p = int(str(rp)[1])
