@@ -20,7 +20,7 @@ def print_board(board):
                 print(board[i][j], end = ' ')
         print()
 
-# Use this function to translate user input (algebraic position) to list positions for the game board..
+# This function translates list positions to -> algebraic positions 
 def get_list_position(r_heading, c_heading):
     # row heading/ outer list position
     row_mapping = {'1': 8, '2': 7, '3': 6, '4': 5, '5': 4, '6': 3, '7': 2, '8': 1 }
@@ -30,8 +30,6 @@ def get_list_position(r_heading, c_heading):
     col_list_pos = col_mapping[c_heading]
     return row_list_pos, col_list_pos
 
-# There must be a better way to do this, TODO combine this function with get_list_position
-# and just reverse the dict instead of creating more dicts...
 # Use this function to return back algebraic location of possible moves to user...
 def get_board_position(r_heading, c_heading):
     row_mapping = {8: 1, 7: 2, 6: 3, 5: 4, 4: 5, 3: 6, 2: 7, 1: 8 }
@@ -78,8 +76,6 @@ board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 row_position, col_position = get_list_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
-# Draw board with player's piece in position they specified..
-print_board(board)
 
 # execute h moves
 h_moves = get_moves("h", board, row_position, col_position)
@@ -88,8 +84,7 @@ for move in h_moves:
     board[row_position][move] = "h"
     list_position = int(str(row_position) + str(move))
     h_move_positions.append(list_position)
-print("Look here is h_move_positions: " + str(h_move_positions))
-# Look here is h_move_positions: [41, 42, 44, 45, 46, 47, 48]
+
 board_positions = []
 for id, rp in enumerate(h_move_positions):
     row_p = int(str(rp)[0])
@@ -113,9 +108,5 @@ for move in v_moves:
 
 print_board(board)
 
-#print("h move positions: " + h_move_positions)
 
-#print(h_moves)
-#print(v_moves)
-#print(d_moves)
-#print(l_moves)
+print("Look here are board_positions: " + str(board_positions))
