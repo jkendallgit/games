@@ -39,14 +39,22 @@ def get_alg_position(r_heading, c_heading):
     alg_position =  str(col_list_pos) + str(row_list_pos)
     return alg_position
 
+def get_piece_name(input_piece):
+        switcher={
+                "Q":"Queen",
+                "R":"Rook",
+                "K":"Knight"
+             }
+        return switcher.get(input_piece, "UnsupportedPiece")
+
+
 def get_move_types(player_type):
-    print("LOOK, get_move_types got passed player_type of: " + player_type)
-    move_types = []
-    # case statement
+    print("LOOK, get_move_types got passed player_type of: " + get_piece_name(input_piece))
+    # move_types = ()  #Tuple, not a list
     # return move_types
-    
 
-
+    # thistuple = ("apple", "banana", "cherry")
+    # print(thistuple)
 
 def get_moves(move_type, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
@@ -86,16 +94,25 @@ board[row_position][col_position] = input_piece
 
 # execute h moves
 h_moves = get_moves("h", board, row_position, col_position)
-h_move_positions = []
+# h_move_positions = []
+
+# Update board display with all possible h moves, this should move to a function
 for move in h_moves:
     board[row_position][move] = "h"
-    list_position = int(str(row_position) + str(move))
-    h_move_positions.append(list_position)
+    #list_position = int(str(row_position) + str(move))
+    #h_move_positions.append(list_position)
 
 # execute v moves
 v_moves = get_moves("v",board, row_position, col_position)
+
+# Update board display with all possible v moves, this should move to a function
 for move in v_moves:
     board[move][col_position] = "v"
+
+print_board(board)
+print("LOOK, h_moves is: " + str(h_moves))
+print("LOOK, v_moves is: " + str(v_moves))
+get_move_types("KING")
 
 # Use this later once you have all possible moves in 1 single list
 # board_positions = []
