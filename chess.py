@@ -31,13 +31,22 @@ def get_list_position(r_heading, c_heading):
     return row_list_pos, col_list_pos
 
 # This function translates list positions to -> algebraic positions
-def get_alg_position(r_heading, c_heading):
+# def get_alg_position(r_heading, c_heading):
+def get_alg_positions(possible_moves):
     row_mapping = {8: 1, 7: 2, 6: 3, 5: 4, 4: 5, 3: 6, 2: 7, 1: 8 }
     col_mapping = {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h' }
-    row_list_pos = row_mapping[r_heading]
-    col_list_pos = col_mapping[c_heading]
-    alg_position =  str(col_list_pos) + str(row_list_pos)
-    return alg_position
+    user_possible_moves = []
+
+    for id, move in enumerate(possible_moves):
+        row = int(str(move)[0])
+        col = int(str(move)[1])
+
+        row_list_pos = row_mapping[row]
+        col_list_pos = col_mapping[col]
+        
+        user_move = str(col_list_pos) + str(row_list_pos)
+        user_possible_moves.append(user_move)
+    return user_possible_moves
 
 def get_piece_name(input_piece):
         switcher={
@@ -67,7 +76,7 @@ def get_moves(move_types, board, row_position, col_position):
 
     # Iterate through move_types and print them out...
     for type in move_types: 
-        print("LOOK, get_moves sees type of: " + type + " in move_types tuple...")
+        # print("get_moves sees type of: " + type + " in move_types tuple...")
         # Horizontal
         if (type == "h"):
             for idx, col in enumerate(board[row_position]):
@@ -113,8 +122,11 @@ print_board(board)
 
 print("LOOK, possible_moves are: " + str(possible_moves))
 
-# Use this later once you have all possible moves in 1 single list
-# board_positions = []
+# Get possible moves (in algebraic notation) to return to user 
+user_possible_moves = get_alg_positions(possible_moves)
+
+print("LOOK, user_possible_moves are: " + str(user_possible_moves))
+
 # for id, rp in enumerate(h_move_positions):
 #    row_p = int(str(rp)[0])
 #    col_p = int(str(rp)[1])
