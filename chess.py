@@ -22,9 +22,9 @@ def print_board(board):
 
 # This function translates algebraic positions to ->  list positions 
 def get_list_position(r_heading, c_heading):
-    # r_heading is outer list position
+    # r_heading = outer list position
     row_mapping = {'1': 8, '2': 7, '3': 6, '4': 5, '5': 4, '6': 3, '7': 2, '8': 1 }
-    # c_heading is inner list position
+    # c_heading = inner list position
     col_mapping = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8 }
     row_list_pos = row_mapping[r_heading]
     col_list_pos = col_mapping[c_heading]
@@ -36,8 +36,8 @@ def get_alg_position(r_heading, c_heading):
     col_mapping = {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h' }
     row_list_pos = row_mapping[r_heading]
     col_list_pos = col_mapping[c_heading]
-    board_position =  str(col_list_pos) + str(row_list_pos)
-    return board_position
+    alg_position =  str(col_list_pos) + str(row_list_pos)
+    return alg_position
 
 def get_moves(move_type, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
@@ -88,13 +88,13 @@ v_moves = get_moves("v",board, row_position, col_position)
 for move in v_moves:
     board[move][col_position] = "v"
 
-board_positions = []
-for id, rp in enumerate(h_move_positions):
-    row_p = int(str(rp)[0])
-    col_p = int(str(rp)[1])
-    board_positions.append(get_alg_position(row_p, col_p))
-   
-
+# Use this later once you have all possible moves in 1 single list
+# board_positions = []
+# for id, rp in enumerate(h_move_positions):
+#    row_p = int(str(rp)[0])
+#    col_p = int(str(rp)[1])
+#    board_positions.append(get_alg_position(row_p, col_p))
+# print("Look here are board_positions: " + str(board_positions))
 
 # LOOK
 # work on this next, you want to append all the  possible v moves to board_positions list,
@@ -104,7 +104,3 @@ for id, rp in enumerate(h_move_positions):
 #    col_p = int(str(rp)[1])
 #    board_positions.append(get_alg_position(row_p, col_p))
 # print("Look here are board_positions: " + str(board_positions))
-
-# print_board(board)
-
-print("Look here are board_positions: " + str(board_positions))
