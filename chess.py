@@ -58,11 +58,14 @@ def get_move_types(player_type):
     move_types = switcher.get(player_type, "UnsupportedPlayer")
     return move_types
 
-   
 
-def get_moves(move_type, board, row_position, col_position):
+def get_moves(move_type, board, row_position, col_position, move_types):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
     possible_moves = []
+
+    # Iterate through move_types and print them out...
+    for type in move_types: 
+        print("LOOK, get_moves sees type of: " + type + " in move_types tuple...")
 
     # Horizontal
     if (move_type == "h"):
@@ -78,7 +81,10 @@ def get_moves(move_type, board, row_position, col_position):
     #else:
         #print("Unsupported move type!: " + move_type)
         #exit(1)
+
+    print("LOOK get_moves got move_types of: " + str(move_types))
     
+    print("LOOK get_moves came up with possible_moves of: " + str(possible_moves))
     return possible_moves
 
 # Initialize chess board
@@ -96,8 +102,11 @@ board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 row_position, col_position = get_list_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
+# given input_piece, determine what move types can be made:
+move_types = get_move_types(input_piece)
+
 # execute h moves
-h_moves = get_moves("h", board, row_position, col_position)
+h_moves = get_moves("h", board, row_position, col_position, move_types)
 # h_move_positions = []
 
 # Update board display with all possible h moves, this should move to a function
@@ -107,23 +116,20 @@ for move in h_moves:
     #h_move_positions.append(list_position)
 
 # execute v moves
-v_moves = get_moves("v",board, row_position, col_position)
+v_moves = get_moves("v",board, row_position, col_position, move_types)
 
 # Update board display with all possible v moves, this should move to a function
 for move in v_moves:
     board[move][col_position] = "v"
 
-print_board(board)
-print("LOOK, h_moves is: " + str(h_moves))
-print("LOOK, v_moves is: " + str(v_moves))
-move_types = get_move_types(input_piece)
-print("LOOK, move_types is: " + str(move_types))
-print(type(move_types))
+#print_board(board)
+#print("LOOK, h_moves is: " + str(h_moves))
+#print("LOOK, v_moves is: " + str(v_moves))
+#move_types = get_move_types(input_piece)
+#print("LOOK, move_types is: " + str(move_types))
+#print(type(move_types))
 
-# ****
-# Next, move up the above call to move_types to above where you call "get_moves" for h_moves and v_moves,
-# and see if you can just pass in the tuple "move_types" and have get_moves loop through it and report
-# back the values like h, v, d etc...
+
 
 # Use this later once you have all possible moves in 1 single list
 # board_positions = []
