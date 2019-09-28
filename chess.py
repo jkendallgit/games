@@ -60,7 +60,7 @@ def get_move_types(player_type):
     #print("LOOK, get_move_types got passed player_type of: " + get_piece_name(input_piece))
     switcher={
                 "Q":("h","v")
-                # BELOW IS CORRECT, PUT IT BACK LATER
+                # BELOW IS CORRECT, PUT IT BACK LATER, NEED TO ADD "d" for Queen...
                 # "Q":("d","h","v")
                 #"R":"Rook",
                 #"K":"Knight"
@@ -69,7 +69,6 @@ def get_move_types(player_type):
     return move_types
 
 
-# def get_moves(move_type, board, row_position, col_position, move_types):
 def get_moves(move_types, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
     possible_moves = []
