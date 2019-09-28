@@ -39,10 +39,19 @@ def get_alg_position(r_heading, c_heading):
     alg_position =  str(col_list_pos) + str(row_list_pos)
     return alg_position
 
+def get_move_types(player_type):
+    print("LOOK, get_move_types got passed player_type of: " + player_type)
+    move_types = []
+    # case statement
+    # return move_types
+    
+
+
+
 def get_moves(move_type, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
     possible_moves = []
-    
+
     # Horizontal
     if (move_type == "h"):
         for idx, col in enumerate(board[row_position]):
