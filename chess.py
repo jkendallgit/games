@@ -92,7 +92,10 @@ print("Look here is h_move_positions: " + str(h_move_positions))
 # Look here is h_move_positions: [41, 42, 44, 45, 46, 47, 48]
 return_to_user_positions = []
 for id, rp in enumerate(h_move_positions):
-    get_board_position(h_move_positions[idx][0], h_move_positions[idx][1])
+    #get_board_position(h_move_positions[idx][0], h_move_positions[idx][1])
+    print (int(str(rp)[0]))
+    print (int(str(rp)[1]))
+   
 
 
 # execute v moves
