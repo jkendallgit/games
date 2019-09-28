@@ -125,19 +125,7 @@ print("possible_moves     : " + str(possible_moves))
 # Get possible moves (in algebraic notation) to return to user 
 user_possible_moves = get_alg_positions(possible_moves)
 
-print("user_possible_moves: " + str(user_possible_moves))
-
-# for id, rp in enumerate(h_move_positions):
-#    row_p = int(str(rp)[0])
-#    col_p = int(str(rp)[1])
-#    board_positions.append(get_alg_position(row_p, col_p))
-# print("Look here are board_positions: " + str(board_positions))
-
-# LOOK
-# work on this next, you want to append all the  possible v moves to board_positions list,
-# right now it just has h_moves...*Do this from 1 function..
-# for id, rp in enumerate(h_move_positions):
-#    row_p = int(str(rp)[0])
-#    col_p = int(str(rp)[1])
-#    board_positions.append(get_alg_position(row_p, col_p))
-# print("Look here are board_positions: " + str(board_positions))
+# Return list of possible moves to the user
+for m in user_possible_moves[:-1]:
+    print(m, end=', ')
+print(user_possible_moves[-1])
