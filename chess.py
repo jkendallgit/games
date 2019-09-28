@@ -120,7 +120,8 @@ possible_moves =  get_moves(move_types, board, row_position, col_position)
 # Print game board
 print_board(board)
 
-print("possible_moves     : " + str(possible_moves))
+# TODO, remove this later, print out all the list coordinates
+print(str(possible_moves))
 
 # Get possible moves (in algebraic notation) to return to user 
 user_possible_moves = get_alg_positions(possible_moves)
