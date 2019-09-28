@@ -48,10 +48,11 @@ def get_piece_name(input_piece):
         return switcher.get(input_piece, "UnsupportedPiece")
 
 def get_move_types(player_type):
-    print("LOOK, get_move_types got passed player_type of: " + get_piece_name(input_piece))
+    #print("LOOK, get_move_types got passed player_type of: " + get_piece_name(input_piece))
     switcher={
-                # "Q":"dhv" # Returns a string
-                "Q":("d","h","v")
+                "Q":("h","v")
+                # BELOW IS CORRECT, PUT IT BACK LATER
+                # "Q":("d","h","v")
                 #"R":"Rook",
                 #"K":"Knight"
              }
@@ -59,31 +60,31 @@ def get_move_types(player_type):
     return move_types
 
 
-def get_moves(move_type, board, row_position, col_position, move_types):
+# def get_moves(move_type, board, row_position, col_position, move_types):
+def get_moves(move_types, board, row_position, col_position):
     # move types (h horizontal, v vertical, d diagonal, l L-shaped)
     possible_moves = []
 
     # Iterate through move_types and print them out...
     for type in move_types: 
         print("LOOK, get_moves sees type of: " + type + " in move_types tuple...")
+        # Horizontal
+        if (type == "h"):
+            for idx, col in enumerate(board[row_position]):
+                if (idx > 0 and idx != col_position):
+                    move = int(str(row_position) + str(idx))
+                    possible_moves.append(move)
+                    # Update the game board
+                    board[row_position][idx] = "h"
+        # Vertical
+        if (type == "v"):
+            for idx, row in enumerate(board):
+                if (idx > 0 and idx != row_position):
+                    move = int(str(idx) + str(col_position))
+                    possible_moves.append(move)
+                    # Update the game board
+                    board[idx][col_position] = "v"
 
-    # Horizontal
-    if (move_type == "h"):
-        for idx, col in enumerate(board[row_position]):
-            if (idx > 0 and idx != col_position):
-                possible_moves.append(idx)
-
-    if (move_type == "v"):
-        for idx, row in enumerate(board):
-            if (idx > 0 and idx != row_position):
-                possible_moves.append(idx)
-    # Need to add a check here for any move type that's not supported..
-    #else:
-        #print("Unsupported move type!: " + move_type)
-        #exit(1)
-
-    print("LOOK get_moves got move_types of: " + str(move_types))
-    print("LOOK get_moves came up with possible_moves of: " + str(possible_moves))
     return possible_moves
 
 # Initialize chess board
@@ -97,7 +98,7 @@ board = [[" ", "  a", "   b", "   c", "   d", "   e", "   f", "   g", "   h"],
 ["2", " ", " ", " ", " ", " ", " ", " ", " "],
 ["1", " ", " ", " ", " ", " ", " ", " ", " "]]
 
-# given user input, call get_list_position to return the outer and inner list locations...
+# Call get_list_position to return the outer and inner list locations (based on user input...)
 row_position, col_position = get_list_position(input_position[1], input_position[0])
 board[row_position][col_position] = input_piece
 
@@ -105,24 +106,27 @@ board[row_position][col_position] = input_piece
 move_types = get_move_types(input_piece)
 
 # execute h moves
-h_moves = get_moves("h", board, row_position, col_position, move_types)
+# h_moves = get_moves("h", board, row_position, col_position, move_types)
 
 # Update board display with all possible h moves, this should move to a function
-for move in h_moves:
-    board[row_position][move] = "h"
+#for move in h_moves:
+    #board[row_position][move] = "h"
     #list_position = int(str(row_position) + str(move))
     #h_move_positions.append(list_position)
 
 # execute v moves
-v_moves = get_moves("v",board, row_position, col_position, move_types)
+# v_moves = get_moves("v",board, row_position, col_position, move_types)
 
 # Update board display with all possible v moves, this should move to a function
-for move in v_moves:
-    board[move][col_position] = "v"
+#for move in v_moves:
+    #board[move][col_position] = "v"
 
 #print_board(board)
-print("LOOK, h_moves is: " + str(h_moves))
-print("LOOK, v_moves is: " + str(v_moves))
+#print("LOOK, h_moves is: " + str(h_moves))
+#print("LOOK, v_moves is: " + str(v_moves))
+
+possible_moves =  get_moves(move_types, board, row_position, col_position)
+print("LOOK, possible_moves are: " + str(possible_moves))
 
 # Use this later once you have all possible moves in 1 single list
 # board_positions = []
