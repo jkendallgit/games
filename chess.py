@@ -59,9 +59,9 @@ def get_piece_name(input_piece):
 def get_move_types(player_type):
     #print("LOOK, get_move_types got passed player_type of: " + get_piece_name(input_piece))
     switcher={
-                "Q":("h","v")
+                # "Q":("h","v")
                 # BELOW IS CORRECT, PUT IT BACK LATER, NEED TO ADD "d" for Queen...
-                # "Q":("d","h","v")
+                "Q":("d","h","v")
                 #"R":"Rook",
                 #"K":"Knight"
              }
@@ -92,7 +92,19 @@ def get_moves(move_types, board, row_position, col_position):
                     possible_moves.append(move)
                     # Update the game board
                     board[idx][col_position] = "v"
-
+        # Diagonal
+        # list(zip(it.count(), ['a', 'b', 'c']))
+        # print("LOOK, the row_position passed in was: " + str(row_position))
+        if (type == "d"):
+            # Print all board rows that are above (really less than in the list) current board row
+            print("BOARD ROWS ABOVE...")
+            for idx, row in enumerate(board):
+                print(row)
+            # Print all board rows that are below (really greater than in the list) current board row
+            print("BOARD ROWS BELOW...")
+            for idx, row in enumerate(board[(row_position +1):]):
+                print(row)
+            # test_list[-1]  
     return possible_moves
 
 # Initialize chess board
